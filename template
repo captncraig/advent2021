@@ -1,0 +1,9 @@
+package main
+
+func dayNN(input string) (p1Result, p2Result int) {
+	lines := Lines(input)
+	var _ = lines // code here
+	return
+}
+
+var _ = register(NN, dayNN, ``)
