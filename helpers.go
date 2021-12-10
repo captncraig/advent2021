@@ -34,7 +34,20 @@ func LinesRegexp(input string, regex string) [][]string {
 	return results
 }
 
-func Ints(input string) []int {
+func IntsCSV(input string) []int {
+	parts := strings.Split(input, ",")
+	nums := make([]int, len(parts))
+	var err error
+	for i, n := range parts {
+		nums[i], err = strconv.Atoi(n)
+		if err != nil {
+			log.Fatalf("%s is not a number!", n)
+		}
+	}
+	return nums
+}
+
+func IntsComma(input string) []int {
 	lines := Lines(input)
 	nums := make([]int, len(lines))
 	var err error
